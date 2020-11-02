@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer"
+    tools:context=".Payment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Total"
+            android:textColor="#10164E"
+            android:textSize="34sp"
+            android:layout_marginLeft="30dp"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/thf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostel Fee"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="75dp"
+            android:textColor="#000"/>
+
+
+        <TextView
+            android:id="@+id/totalhostelfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+
+
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Security"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="75dp"
+            android:textColor="#000"/>
+
+
+        <TextView
+            android:id="@+id/totalsecurityfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Paid Payment"
+            android:textColor="#10164E"
+            android:textSize="34sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"/>
+
+
+
+        <TextView
+            android:id="@+id/th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostel Fee"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="75dp"
+            android:textColor="#000"/>
+
+
+        <TextView
+            android:id="@+id/paidhostelfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Security"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="75dp"
+                android:textColor="#000"/>
+
+
+
+
+        <TextView
+            android:id="@+id/paidsecurityfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Due Payment"
+            android:textColor="#10164E"
+            android:textSize="34sp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hostel Fee"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="75dp"
+            android:textColor="#000"/>
+
+
+        <TextView
+            android:id="@+id/duehostelfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Security"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="75dp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/duesecurityfee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:textColor="#000"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Used Security"
+            android:textColor="#10164E"
+            android:textSize="30sp"
+            android:layout_marginLeft="30dp" />
+
+            <ImageView
+                android:id="@+id/used"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_help_outline_black_24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="12dp"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/usedsecurity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000.00"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button"
+            android:layout_marginLeft="100dp"
+            android:textSize="16dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="#000"/>
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/forOwneroOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <com.getbase.floatingactionbutton.FloatingActionsMenu
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_addButtonColorNormal="#10164E"
+                    android:layout_marginTop="70dp"
+                    app:fab_labelStyle="@style/custom"
+                    app:fab_addButtonColorPressed="#10164E"
+                    app:fab_addButtonPlusIconColor="#FFF">
+
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_size="mini"
+                        app:fab_colorPressed="#10164E"
+                        app:fab_colorNormal="#10164E"
+                        app:fab_title="Edit Total"
+                        app:fab_icon="@drawable/ic_mode_edit_black_24dp"
+                        android:id="@+id/fab1"/>
+
+
+                    <com.getbase.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fab_size="mini"
+                        app:fab_colorPressed="#10164E"
+                        app:fab_title="Edit Paid"
+                        app:fab_colorNormal="#10164E"
+                        app:fab_icon="@drawable/ic_mode_edit_black_24dp"
+                        android:id="@+id/fab2"/>
+
+                </com.getbase.floatingactionbutton.FloatingActionsMenu>
+                </RelativeLayout>
+
+            </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu="@menu/activity_profile_drawer"
+        android:fitsSystemWindows="true"
+        app:itemTextColor="@color/dra_font"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

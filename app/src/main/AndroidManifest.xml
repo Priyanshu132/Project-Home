@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.home">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.Camera" />
+    <uses-feature android:name="android.hardware.Camera.autofocus" />
+
+    <meta-data
+        android:name="firebase_analytics_collection_enabled"
+        android:value="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="HOME"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".feedback_activity"></activity>
+        <activity android:name=".All_Checked" />
+        <activity
+            android:name=".Student_payment_list"
+            android:label="All Students" />
+        <activity
+            android:name=".AddStudent"
+            android:label="Add Students" />
+        <activity android:name=".ower_phone" />
+        <activity android:name=".AddHostel" />
+        <activity
+            android:name=".SignUp"
+            android:label="Sign Up" />
+        <activity android:name=".Forgetpass" />
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Attendance"
+            android:label="Attendance" />
+        <activity
+            android:name=".About"
+            android:label="About" />
+        <activity
+            android:name=".Hostelpic"
+            android:label="Hostel&apos;s Pictures" />
+        <activity
+            android:name=".Notification"
+            android:label="Notifications" />
+        <activity
+            android:name=".Facility"
+            android:label="Facilities" />
+        <activity
+            android:name=".Student_list"
+            android:label="Students" />
+        <activity
+            android:name=".Mess_time_table"
+            android:label="Mess Time Table" />
+        <activity
+            android:name=".Payment"
+            android:label="Payment" />
+        <activity
+            android:name=".Profile"
+            android:label="Profile" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Capture"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>

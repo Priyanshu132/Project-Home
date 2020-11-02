@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/na"
+        android:textSize="36sp"
+        android:text="dlksdk"
+        android:layout_marginLeft="30dp"
+        android:textStyle="italic|bold"
+        android:textColor="#0B1F81" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/br"
+        android:textStyle="bold"
+        android:textSize="38sp"
+        android:text="djsndsdnsndl"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"/> -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/a2"
+            android:src="@drawable/ic_person_black_50dp"
+            android:background="@drawable/picback"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#c924a2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NAME"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/na"
+                android:text="Rishab Goel"
+                android:textSize="16sp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="italic|bold"
+                android:textColor="#0B1F81" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOBILE NO."
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mo"
+                android:text="7037235415"
+                android:textSize="16sp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="italic|bold"
+                android:textColor="#0B1F81" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/be"
+        android:id="@+id/lll"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@+id/ll"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COURSE"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="15dp"
+                android:layout_gravity="center"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/co"
+                android:text="B.TECH"
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+
+                android:textColor="#0B1F81"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="#000"/>
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BRANCH"
+                android:textSize="18sp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/br"
+                android:text="CSE"
+                android:textSize="16sp"
+                android:textStyle="italic|bold"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+
+                android:textColor="#0B1F81"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="#000"/>
+
+        <LinearLayout
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ROOM NO."
+                android:textSize="18sp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ro"
+                android:text="004"
+                android:textStyle="bold|italic"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:textColor="#0B1F81"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/lll"
+        android:layout_marginHorizontal="15dp"
+        android:background="#000"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

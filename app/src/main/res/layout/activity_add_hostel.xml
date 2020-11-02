@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="10dp">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Hostel "
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#0f0f0f"
+            android:layout_marginTop="20dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="#4d4646"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_marginBottom="15dp"
+            android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logo_pic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:layout_marginTop="5dp"/>
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Hostel \n    Picture"
+                android:textColor="#4d4646"
+                android:layout_marginTop="50dp"
+                android:textSize="18dp"
+                android:layout_marginHorizontal="35dp"
+                android:layout_gravity="center"/>
+
+
+            <ImageButton
+                android:id="@+id/camera"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/picback"
+                android:src="@drawable/ic_camera_alt_black_50dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="105dp"/>
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingStart="10dp"
+            android:hint="Hostel Name"
+            android:layout_margin="10dp"
+            android:background="@drawable/button"/>
+
+        <EditText
+            android:id="@+id/loc"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingStart="10dp"
+            android:hint="Hostel Address"
+            android:layout_margin="10dp"
+            android:background="@drawable/button"/>
+
+        <EditText
+            android:id="@+id/landline"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Phone no./LandLine no."
+            android:paddingStart="10dp"
+            android:layout_margin="10dp"
+            android:inputType="number"
+            android:background="@drawable/button"/>
+
+     <!--   <EditText
+            android:id="@+id/ownername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:background="@drawable/button"
+            android:hint="Name of Owner"
+            android:layout_margin="10dp" />
+-->
+
+
+
+
+
+        <Button
+            android:id="@+id/bu"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="Done"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/buttondesign"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="12dp" />
+
+
+
+    </LinearLayout>
+</ScrollView>

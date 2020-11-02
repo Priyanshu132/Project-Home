@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Payment" />
+        <item
+            android:id="@+id/nav_mess"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mess Time Table"/>
+        <item
+            android:id="@+id/nav_student"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Students List" />
+        <item
+            android:id="@+id/nav_attend"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Attendance" />
+
+        <item
+            android:id="@+id/nav_faci"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Facilities"/>
+        <item
+            android:id="@+id/nav_pic"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Hostel Pic" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_noti"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Notifications" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_menu_share"
+                android:title="About" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Logout" />
+
+        </menu>
+    </item>
+
+</menu>

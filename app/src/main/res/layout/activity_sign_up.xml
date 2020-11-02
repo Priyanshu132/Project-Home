@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp"
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:layout_marginHorizontal="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For Owner's"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#0f0f0f"
+        android:layout_marginTop="5dp" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill in this form to Add your Hostel!"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:layout_marginTop="5dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#4d4646"/>
+
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:id="@+id/ownerImage"
+       android:src="@drawable/ic_person_black_50dp"
+       android:layout_marginTop="10dp"
+       android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:hint="Name"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:background="@drawable/button"/>
+<!--
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:hint="Gender (M/F)"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        android:background="@drawable/button"/>
+
+-->
+        <Spinner
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:paddingStart="10dp"
+            android:layout_margin="10dp"
+            tools:ignore="InvalidId" />
+
+        <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Email"
+        android:inputType="textEmailSubject"
+        android:paddingStart="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/button"/>
+
+    <EditText
+        android:id="@+id/mobi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Mobile No.(Onwer)"
+        android:inputType="phone"
+        android:ems="10"
+        android:digits="9123456780"
+        android:paddingStart="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/button"/>
+<!--
+        <EditText
+            android:id="@+id/mob"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingStart="10dp"
+            android:ems="10"
+            android:digits="9123456780"
+            android:background="@drawable/button"
+            android:inputType="phone"
+            android:hint="Mobile No.(Warden)"
+            android:layout_margin="10dp" />
+-->
+
+    <EditText
+        android:id="@+id/reli"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/button"
+        android:hint="Religion"
+        android:layout_margin="10dp" />
+
+
+    <EditText
+        android:id="@+id/loc"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/button"
+        android:hint="Address"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/button"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/cpass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/button"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:layout_margin="10dp" />
+
+
+
+    <Button
+        android:id="@+id/bu"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Sign Up"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:background="@drawable/buttondesign"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="12dp" />
+
+
+
+
+    </LinearLayout>
+</ScrollView>

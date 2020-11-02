@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer"
+    tools:context=".Attendance">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0B1F81"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/l">
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="wrap_content"
+                android:id="@+id/search"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:layout_weight="10"
+                app:queryHint="Search by Name"
+                android:background="@drawable/button"
+                android:layout_margin="5dp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/self"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Self :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/OwnerStatus"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#95E9ECF0"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="15dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/image_1"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ima"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:padding="5dp"
+                android:background="#000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_1"
+                android:text="Priyanshu Gupta"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:textColor="#0B1F81"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Students :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noresult"
+            android:text="No Result Found"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:visibility="gone"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycle_list1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:menu="@menu/activity_profile_drawer"
+        android:fitsSystemWindows="true"
+        app:itemTextColor="@color/dra_font"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
