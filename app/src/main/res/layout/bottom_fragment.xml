@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="10dp"
+    android:background="@drawable/button">
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#221998"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        android:layout_marginLeft="25dp"
+        android:text="Amount"/>
+
+
+    <EditText
+        android:id="@+id/amt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="50"
+        android:singleLine="true"
+        android:hint=" 5000"
+        android:paddingTop="10dp"
+        android:backgroundTint="#221998"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <Button
+        android:id="@+id/paybtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="PAY NOW"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="55dp"
+        android:textColor="#4A4E59"
+        android:background="@drawable/be"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

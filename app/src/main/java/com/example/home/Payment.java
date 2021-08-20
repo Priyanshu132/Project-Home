@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -58,17 +59,17 @@ public class Payment extends AppCompatActivity implements NavigationView.OnNavig
     private String owner_id;
     private  int temp;
     private int temp1;
-    private String temp_id;
-     boolean isFABOpen=false;
      private DatabaseReference databaseReference;
      private  LinearLayout linearLayout;
+     private TextView ins;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-
+        ins = findViewById(R.id.instru);
         fab = findViewById(R.id.fab1);
         fab3 = findViewById(R.id.fab2);
         usedse = findViewById(R.id.used);
@@ -236,6 +237,15 @@ public class Payment extends AppCompatActivity implements NavigationView.OnNavig
 
                 }
             });
+            ins.setVisibility(View.VISIBLE);
+            dhf.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Botton bottomSheet = new Botton(owner_id);
+                    bottomSheet.show(getSupportFragmentManager(), "TAG");
+                }
+            });
 
         }
             drawerLayout = findViewById(R.id.drawer);
@@ -248,11 +258,12 @@ public class Payment extends AppCompatActivity implements NavigationView.OnNavig
 
 
 
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.profile,menu);
+        inflater.inflate(R.menu.transaction,menu);
         return true;
     }
 
@@ -262,14 +273,15 @@ public class Payment extends AppCompatActivity implements NavigationView.OnNavig
             return true;
         }
 //        switch (item.getItemId()){
-//            case R.id.action_settings:
-//                Dialog dialog=new Dialog(Payment.this);
-//                dialog.setTitle("Edit Payment");
-//                dialog.setContentView(R.layout.edit_payment);
-//                dialog.show();
-                //dialog
+            if(R.id.transaxtion == item.getItemId()){
+                Intent i = new Intent(getApplicationContext(),ListOfPayments.class);
+                i.putExtra("ownerId",owner_id);
+                i.putExtra("uid",UID);
+                //Log.e("priyanshu","come");
+                startActivity(i);
+            }
 
-               //
+
 //
 //                Button button=(Button)findViewById(R.id.update);
 //                button.setOnClickListener(new View.OnClickListener() {
