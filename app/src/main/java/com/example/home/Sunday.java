@@ -41,11 +41,15 @@ public class Sunday extends Fragment {
     private Button feedBack;
     private mess_name Mess_name;
     private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference1;
     private LinearLayout morning_lay;
     private LinearLayout noon_lay;
     private LinearLayout night_lay;
     private  LinearLayout evening_lay;
     private ArrayList<mess_name> list;
+    private ArrayList<mess_name> list1;
+    private ArrayList<mess_name> list2;
+    private ArrayList<mess_name> list3;
     private RecyclerView recyclerView;
     private RecyclerView recyclerView1;
     private RecyclerView recyclerView2;
@@ -75,9 +79,7 @@ public class Sunday extends Fragment {
         noon_lay=view.findViewById(R.id.noon_layout);
         Mess_name=new mess_name();
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
 
-        itemTouchHelper.attachToRecyclerView(recyclerView3);
 
 
         return view;
@@ -98,7 +100,7 @@ public class Sunday extends Fragment {
                 case ItemTouchHelper.RIGHT:
                     final String delete_word = list.get(pos).getName();
                     databaseReference= FirebaseDatabase.getInstance().getReference().child("Owner's")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Sunday").child("Noon");
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Sunday").child("Morning");
 
                     Query query = databaseReference.orderByChild("name").equalTo(delete_word);
 
@@ -138,6 +140,171 @@ public class Sunday extends Fragment {
         }
     };
 
+
+    ItemTouchHelper.SimpleCallback simpleCallback1 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list1.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Sunday").child("Evening");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
+
+    ItemTouchHelper.SimpleCallback simpleCallback2 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list2.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Sunday").child("Night");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
+
+    ItemTouchHelper.SimpleCallback simpleCallback3 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list3.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Sunday").child("Noon");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
     @Override
     public void onStart() {
         super.onStart();
@@ -151,30 +318,27 @@ public class Sunday extends Fragment {
                         .child(id).child("MessTimeTable").child("Sunday");
 
                 if(id.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+
+
+                    ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+                    ItemTouchHelper itemTouchHelper1 = new ItemTouchHelper(simpleCallback1);
+                    ItemTouchHelper itemTouchHelper2 = new ItemTouchHelper(simpleCallback2);
+                    ItemTouchHelper itemTouchHelper3 = new ItemTouchHelper(simpleCallback3);
+
+                    itemTouchHelper.attachToRecyclerView(recyclerView);
+                    itemTouchHelper1.attachToRecyclerView(recyclerView1);
+                    itemTouchHelper2.attachToRecyclerView(recyclerView2);
+                    itemTouchHelper3.attachToRecyclerView(recyclerView3);
+
                     noon_lay.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
-//                            ViewGroup viewGroup = view.findViewById(android.R.id.content);
-//                            View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
-//                            final Button button=dialogView.findViewById(R.id.add);
-//                            final Button button1=dialogView.findViewById(R.id.delete);
-//                            final TextView textView=dialogView.findViewById(R.id.text_temp);
-//                            textView.setVisibility(View.VISIBLE);
-//                            button.setVisibility(View.VISIBLE);
-//                            button1.setVisibility(View.VISIBLE);
-//                            builder.setView(dialogView);
-//                            final AlertDialog alertDialog = builder.create();
-//                            button.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View view) {
+
                                     final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
                                     ViewGroup viewGroup = view.findViewById(android.R.id.content);
                                     View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
                                     final EditText editText=dialogView.findViewById(R.id.no1);
-//                                    TextView textView1=dialogView.findViewById(R.id.text_temp1);
-//                                    textView1.setVisibility(View.VISIBLE);
-//                                    editText.setVisibility(View.VISIBLE);
+
                                     builder.setView(dialogView);
                                     builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                                         @Override
@@ -188,12 +352,7 @@ public class Sunday extends Fragment {
                                             }
                                         }
                                     });
-//                                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(DialogInterface dialog, int which) {
-//                                            alertDialog.cancel();
-//                                        }
-//                                    });
+
                                     final AlertDialog alertDialog = builder.create();
 
                                     alertDialog.show();
@@ -206,27 +365,12 @@ public class Sunday extends Fragment {
                     night_lay.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
-//                            ViewGroup viewGroup = view.findViewById(android.R.id.content);
-//                            View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
-//                            final Button button=dialogView.findViewById(R.id.add);
-//                            final Button button1=dialogView.findViewById(R.id.delete);
-//                            final TextView textView=dialogView.findViewById(R.id.text_temp);
-//                            textView.setVisibility(View.VISIBLE);
-//                            button.setVisibility(View.VISIBLE);
-//                            button1.setVisibility(View.VISIBLE);
-//                            builder.setView(dialogView);
-//                            final AlertDialog alertDialog = builder.create();
-//                            button.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View view) {
+
                                     final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
                                     ViewGroup viewGroup = view.findViewById(android.R.id.content);
                                     View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
                                     final EditText editText=dialogView.findViewById(R.id.no1);
-//                                    TextView textView1=dialogView.findViewById(R.id.text_temp1);
-//                                    textView1.setVisibility(View.VISIBLE);
-//                                    editText.setVisibility(View.VISIBLE);
+
                                     builder.setView(dialogView);
                                     builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                                         @Override
@@ -240,45 +384,23 @@ public class Sunday extends Fragment {
                                             }
                                         }
                                     });
-//                                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(DialogInterface dialog, int which) {
-//                                            alertDialog.cancel();
-//                                        }
-//                                    });
+
                                     final AlertDialog alertDialog = builder.create();
 
                                     alertDialog.show();
                                 }
                             });
-//                            alertDialog.show();
-//                        }
-//                    });
+
 
                     evening_lay.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
-//                            ViewGroup viewGroup = view.findViewById(android.R.id.content);
-//                            View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
-//                            final Button button=dialogView.findViewById(R.id.add);
-//                            final Button button1=dialogView.findViewById(R.id.delete);
-//                            final TextView textView=dialogView.findViewById(R.id.text_temp);
-//                            textView.setVisibility(View.VISIBLE);
-//                            button.setVisibility(View.VISIBLE);
-//                            button1.setVisibility(View.VISIBLE);
-//                            builder.setView(dialogView);
-//                            final AlertDialog alertDialog = builder.create();
-//                            button.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View view) {
+
                                     final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
                                     ViewGroup viewGroup = view.findViewById(android.R.id.content);
                                     View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
                                     final EditText editText=dialogView.findViewById(R.id.no1);
-//                                    TextView textView1=dialogView.findViewById(R.id.text_temp1);
-//                                    textView1.setVisibility(View.VISIBLE);
-//                                    editText.setVisibility(View.VISIBLE);
+
                                     builder.setView(dialogView);
                                     builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                                         @Override
@@ -292,45 +414,22 @@ public class Sunday extends Fragment {
                                             }
                                         }
                                     });
-//                                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(DialogInterface dialog, int which) {
-//                                            alertDialog.cancel();
-//                                        }
-//                                    });
+
                                     final AlertDialog alertDialog = builder.create();
 
                                     alertDialog.show();
                                 }
                             });
-//                            alertDialog.show();
-//                        }
-//                    });
 
                     morning_lay.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-//                            final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
-//                            ViewGroup viewGroup = view.findViewById(android.R.id.content);
-//                            View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
-//                            final Button button=dialogView.findViewById(R.id.add);
-//                            final Button button1=dialogView.findViewById(R.id.delete);
-//                            final TextView textView=dialogView.findViewById(R.id.text_temp);
-//                            textView.setVisibility(View.VISIBLE);
-//                            button.setVisibility(View.VISIBLE);
-//                            button1.setVisibility(View.VISIBLE);
-//                            builder.setView(dialogView);
-//                            final AlertDialog alertDialog = builder.create();
-//                            button.setOnClickListener(new View.OnClickListener() {
-//                                @Override
-//                                public void onClick(View view) {
+
                                     final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.CustomAlertDialog);
                                     ViewGroup viewGroup = view.findViewById(android.R.id.content);
                                     View dialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.mess_local, viewGroup, false);
                                     final EditText editText=dialogView.findViewById(R.id.no1);
-//                                    TextView textView1=dialogView.findViewById(R.id.text_temp1);
-//                                    textView1.setVisibility(View.VISIBLE);
-//                                    editText.setVisibility(View.VISIBLE);
+
                                     builder.setView(dialogView);
                                     builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                                         @Override
@@ -344,20 +443,13 @@ public class Sunday extends Fragment {
                                             }
                                         }
                                     });
-//                                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                                        @Override
-//                                        public void onClick(DialogInterface dialog, int which) {
-//                                            alertDialog.cancel();
-//                                        }
-//                                    });
+
                                     final AlertDialog alertDialog = builder.create();
 
                                     alertDialog.show();
                                 }
                             });
-//                            alertDialog.show();
-//                        }
-//                    });
+
 
 
 
@@ -460,16 +552,16 @@ public class Sunday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list2 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list2.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list2);
 
                         recyclerView2.setAdapter(adapter);
-                        size_night=list.size();
+                        size_night=list2.size();
 
                     }
                 }
@@ -487,16 +579,16 @@ public class Sunday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list1 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list1.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list1);
 
                         recyclerView1.setAdapter(adapter);
-                        size_evening=list.size();
+                        size_evening=list1.size();
 
                     }
                 }
@@ -514,16 +606,16 @@ public class Sunday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list3 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list3.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list3);
 
                         recyclerView3.setAdapter(adapter);
-                        size_noon=list.size();
+                        size_noon=list3.size();
 
                     }
                 }

@@ -47,6 +47,9 @@ public class Monday extends Fragment {
     private LinearLayout night_lay;
     private  LinearLayout evening_lay;
     private ArrayList<mess_name> list;
+    private ArrayList<mess_name> list1;
+    private ArrayList<mess_name> list2;
+    private ArrayList<mess_name> list3;
     private RecyclerView recyclerView;
     private RecyclerView recyclerView1;
     private RecyclerView recyclerView2;
@@ -157,7 +160,7 @@ public class Monday extends Fragment {
             switch (direction) {
 
                 case ItemTouchHelper.RIGHT:
-                    final String delete_word = list.get(pos).getName();
+                    final String delete_word = list1.get(pos).getName();
                     databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Monday").child("Evening");
 
@@ -212,7 +215,7 @@ public class Monday extends Fragment {
             switch (direction) {
 
                 case ItemTouchHelper.RIGHT:
-                    final String delete_word = list.get(pos).getName();
+                    final String delete_word = list2.get(pos).getName();
                     databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Monday").child("Night");
 
@@ -267,7 +270,7 @@ public class Monday extends Fragment {
             switch (direction) {
 
                 case ItemTouchHelper.RIGHT:
-                    final String delete_word = list.get(pos).getName();
+                    final String delete_word = list3.get(pos).getName();
                     databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Monday").child("Noon");
 
@@ -549,16 +552,16 @@ public class Monday extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
 
-                                list = new ArrayList<>();
+                                list2 = new ArrayList<>();
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                                    list.add(ds.getValue(mess_name.class));
+                                    list2.add(ds.getValue(mess_name.class));
 
                                 }
-                                mess_adapter adapter = new mess_adapter(list);
+                                mess_adapter adapter = new mess_adapter(list2);
 
                                 recyclerView2.setAdapter(adapter);
-                                size_night=list.size();
+                                size_night=list2.size();
 
                             }
                         }
@@ -576,16 +579,16 @@ public class Monday extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
 
-                                list = new ArrayList<>();
+                                list1 = new ArrayList<>();
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                                    list.add(ds.getValue(mess_name.class));
+                                    list1.add(ds.getValue(mess_name.class));
 
                                 }
-                                mess_adapter adapter = new mess_adapter(list);
+                                mess_adapter adapter = new mess_adapter(list1);
 
                                 recyclerView1.setAdapter(adapter);
-                                size_evening=list.size();
+                                size_evening=list1.size();
 
                             }
                         }
@@ -603,16 +606,16 @@ public class Monday extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if (dataSnapshot.exists()) {
 
-                                list = new ArrayList<>();
+                                list3 = new ArrayList<>();
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                                    list.add(ds.getValue(mess_name.class));
+                                    list3.add(ds.getValue(mess_name.class));
 
                                 }
-                                mess_adapter adapter = new mess_adapter(list);
+                                mess_adapter adapter = new mess_adapter(list3);
 
                                 recyclerView3.setAdapter(adapter);
-                                size_noon=list.size();
+                                size_noon=list3.size();
 
                             }
                         }

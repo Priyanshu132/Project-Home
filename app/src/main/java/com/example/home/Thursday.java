@@ -41,11 +41,15 @@ public class Thursday extends Fragment {
     private Button feedBack;
     private mess_name Mess_name;
     private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference1;
     private LinearLayout morning_lay;
     private LinearLayout noon_lay;
     private LinearLayout night_lay;
     private  LinearLayout evening_lay;
     private ArrayList<mess_name> list;
+    private ArrayList<mess_name> list1;
+    private ArrayList<mess_name> list2;
+    private ArrayList<mess_name> list3;
     private RecyclerView recyclerView;
     private RecyclerView recyclerView1;
     private RecyclerView recyclerView2;
@@ -76,9 +80,7 @@ public class Thursday extends Fragment {
         Mess_name=new mess_name();
 
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
 
-        itemTouchHelper.attachToRecyclerView(recyclerView3);
 
 
         return view;
@@ -99,7 +101,7 @@ public class Thursday extends Fragment {
                 case ItemTouchHelper.RIGHT:
                     final String delete_word = list.get(pos).getName();
                     databaseReference= FirebaseDatabase.getInstance().getReference().child("Owner's")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Thursday").child("Noon");
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Thursday").child("Morning");
 
                     Query query = databaseReference.orderByChild("name").equalTo(delete_word);
 
@@ -139,6 +141,171 @@ public class Thursday extends Fragment {
         }
     };
 
+
+    ItemTouchHelper.SimpleCallback simpleCallback1 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list1.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Thursday").child("Evening");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
+
+    ItemTouchHelper.SimpleCallback simpleCallback2 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list2.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Thursday").child("Night");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
+
+    ItemTouchHelper.SimpleCallback simpleCallback3 =new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            final int pos = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    final String delete_word = list3.get(pos).getName();
+                    databaseReference1= FirebaseDatabase.getInstance().getReference().child("Owner's")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("MessTimeTable").child("Thursday").child("Noon");
+
+                    Query query = databaseReference1.orderByChild("name").equalTo(delete_word);
+
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                ds.getRef().removeValue();
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast.makeText(getContext(),databaseError.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+                    break;
+
+
+            }
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightActionIcon(R.drawable.ic_delete_black_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(),R.color.white))
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+        }
+    };
     @Override
     public void onStart() {
         super.onStart();
@@ -149,6 +316,18 @@ public class Thursday extends Fragment {
                 databaseReference= FirebaseDatabase.getInstance().getReference().child("Owner's")
                         .child(id).child("MessTimeTable").child("Thursday");
                 if(id.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+
+
+                    ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+                    ItemTouchHelper itemTouchHelper1 = new ItemTouchHelper(simpleCallback1);
+                    ItemTouchHelper itemTouchHelper2 = new ItemTouchHelper(simpleCallback2);
+                    ItemTouchHelper itemTouchHelper3 = new ItemTouchHelper(simpleCallback3);
+
+                    itemTouchHelper.attachToRecyclerView(recyclerView);
+                    itemTouchHelper1.attachToRecyclerView(recyclerView1);
+                    itemTouchHelper2.attachToRecyclerView(recyclerView2);
+                    itemTouchHelper3.attachToRecyclerView(recyclerView3);
+
                     noon_lay.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -368,16 +547,16 @@ public class Thursday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list2 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list2.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list2);
 
                         recyclerView2.setAdapter(adapter);
-                        size_night=list.size();
+                        size_night=list2.size();
 
                     }
                 }
@@ -395,16 +574,16 @@ public class Thursday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list1 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list1.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list1);
 
                         recyclerView1.setAdapter(adapter);
-                        size_evening=list.size();
+                        size_evening=list1.size();
 
                     }
                 }
@@ -422,16 +601,16 @@ public class Thursday extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
 
-                        list = new ArrayList<>();
+                        list3 = new ArrayList<>();
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                            list.add(ds.getValue(mess_name.class));
+                            list3.add(ds.getValue(mess_name.class));
 
                         }
-                        mess_adapter adapter = new mess_adapter(list);
+                        mess_adapter adapter = new mess_adapter(list3);
 
                         recyclerView3.setAdapter(adapter);
-                        size_noon=list.size();
+                        size_noon=list3.size();
 
                     }
                 }
