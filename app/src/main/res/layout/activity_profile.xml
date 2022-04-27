@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/dra"
     android:background="#FFF"
-    tools:context=".Profile">
+    tools:context="mind.blower.home.Profile">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.example.home"
+        applicationId "mind.blower.home"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -44,7 +44,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
-
+    implementation "io.grpc:grpc-okhttp:1.32.2"
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
 
 }

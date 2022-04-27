@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.home">
+    package="mind.blower.home">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -25,22 +25,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ListOfPayments"></activity>
-        <activity android:name=".feedback_activity" />
-        <activity android:name=".All_Checked" />
+        <activity android:name="mind.blower.home.ListOfPayments"></activity>
+        <activity android:name="mind.blower.home.feedback_activity" />
+        <activity android:name="mind.blower.home.All_Checked" />
         <activity
-            android:name=".Student_payment_list"
+            android:name="mind.blower.home.Student_payment_list"
             android:label="All Students" />
         <activity
-            android:name=".AddStudent"
+            android:name="mind.blower.home.AddStudent"
             android:label="Add Students" />
-        <activity android:name=".ower_phone" />
-        <activity android:name=".AddHostel" />
+        <activity android:name="mind.blower.home.ower_phone" />
+        <activity android:name="mind.blower.home.AddHostel" />
         <activity
-            android:name=".SignUp"
+            android:name="mind.blower.home.SignUp"
             android:label="Sign Up" />
-        <activity android:name=".Forgetpass" />
-        <activity android:name=".Login">
+        <activity android:name="mind.blower.home.Forgetpass" />
+        <activity android:name="mind.blower.home.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,35 +48,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Attendance"
+            android:name="mind.blower.home.Attendance"
             android:label="Attendance" />
         <activity
-            android:name=".About"
+            android:name="mind.blower.home.About"
             android:label="About" />
         <activity
-            android:name=".Hostelpic"
+            android:name="mind.blower.home.Hostelpic"
             android:label="Hostel&apos;s Pictures" />
         <activity
-            android:name=".Notification"
+            android:name="mind.blower.home.Notification"
             android:label="Notifications" />
         <activity
-            android:name=".Facility"
+            android:name="mind.blower.home.Facility"
             android:label="Facilities" />
         <activity
-            android:name=".Student_list"
+            android:name="mind.blower.home.Student_list"
             android:label="Students" />
         <activity
-            android:name=".Mess_time_table"
+            android:name="mind.blower.home.Mess_time_table"
             android:label="Mess Time Table" />
         <activity
-            android:name=".Payment"
+            android:name="mind.blower.home.Payment"
             android:label="Payment" />
         <activity
-            android:name=".Profile"
+            android:name="mind.blower.home.Profile"
             android:label="Profile" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="mind.blower.home.MainActivity" />
         <activity
-            android:name=".Capture"
+            android:name="mind.blower.home.Capture"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden" />

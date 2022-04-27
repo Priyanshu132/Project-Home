@@ -6,7 +6,7 @@
     android:background="#fff"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
-    tools:context=".Facility">
+    tools:context="mind.blower.home.Facility">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

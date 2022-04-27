@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:496252117427:android:fd11385d616d14be576bc6",
         "android_client_info": {
-          "package_name": "com.example.home"
+          "package_name": "mind.blower.home"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "496252117427-c7o4auo91q6rbmrd6uuj27ro1l0lg825.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.home",
+            "package_name": "mind.blower.home",
             "certificate_hash": "5015dfb4ae225dc61246d3abbe1eb316dcada24f"
           }
         },

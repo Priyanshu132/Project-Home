@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
-    tools:context=".Hostelpic">
+    tools:context="mind.blower.home.Hostelpic">
 
     <RelativeLayout
         android:layout_width="match_parent"

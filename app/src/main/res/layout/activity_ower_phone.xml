@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp"
+    tools:context="mind.blower.home.SignUp"
     android:orientation="vertical"
     android:background="#FFF"
     android:layout_marginHorizontal="10dp">
